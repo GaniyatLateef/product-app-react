@@ -1,10 +1,13 @@
-const Button = ({label="1234", color="lightyellow"}) => {
-    const style = {
-        backgroundColor: color,
-    }
+const Button = (props) => {
+  const { action, label = "1234", color } = props;
+  const style = {
+    backgroundColor: color,
+  };
   return (
-    <button style={style}>{label}</button>
-  )
-}
+    <button className="btn" style={style} onClick={action}>
+      {label}
+    </button>
+  );
+};
 
-export default Button
+export default Button;
